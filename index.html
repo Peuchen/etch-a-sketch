@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Page Title</title>
+      <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <div id="grid"></div>
+        <script>
+            const grid = document.querySelector('#grid');
+
+            grid.style.cssText = `height: 75vh;
+                width: 75vh;
+                display: grid;
+                grid-template-columns: repeat(16,${100/16}%);
+                grid-template-rows: repeat(16,${100/16}%);`
+        </script>
+    </body>
+</html>
