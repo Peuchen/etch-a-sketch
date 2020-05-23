@@ -25,6 +25,7 @@
                 grid-template-columns: repeat(${n},${100/n}%);
                 grid-template-rows: repeat(${n},${100/n}%);`
 
+            resetGrid();
             createSquares(n);
 
             function createSquares(length) {
@@ -43,6 +44,15 @@
                     square.style.cssText = "background-color: yellow;";
                 })
             });
+
+            function resetGrid() {
+                reset.addEventListener('click', () => {
+                    n = prompt("What is your preferred grid size?", "16");
+                    return n;
+                });
+            }
+            
+            
             
         </script>
     </body>
