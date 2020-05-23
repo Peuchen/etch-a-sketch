@@ -5,10 +5,17 @@
       <meta charset="UTF-8"/>
     </head>
     <body>
+        <button id="reset">Reset the grid</button>
         <div id="grid"></div>
         <script>
+            const reset = document.querySelector('#reset');
             const grid = document.querySelector('#grid');
             let n = 32;
+
+            reset.style.cssText = `display: block;
+                margin: auto;
+                margin-top: 20px;
+                margin-bottom: 20px;`
 
             grid.style.cssText = `height: 75vh;
                 width: 75vh;
