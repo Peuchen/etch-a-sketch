@@ -7,6 +7,8 @@
     <body>
         <div id="grid"></div>
         <script>
+            
+            
             const grid = document.querySelector('#grid');
 
             grid.style.cssText = `height: 75vh;
@@ -15,9 +17,15 @@
                 grid-template-columns: repeat(16,${100/16}%);
                 grid-template-rows: repeat(16,${100/16}%);`
 
-            const square = document.createElement('div');
-            grid.appendChild(square);
+            createSquares(16);
+
+            function createSquares(length) {
+                for (i = 0; i < (length**2); i++) {
+                    grid.appendChild(document.createElement('div'));
+                }
+            }
             
+
             /*
             const squares = document.querySelectorAll('.square');
 
