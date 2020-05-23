@@ -8,15 +8,17 @@
         <div id="grid"></div>
         <script>
             const grid = document.querySelector('#grid');
-            
+            let n = 32;
 
             grid.style.cssText = `height: 75vh;
                 width: 75vh;
+                border: 1px solid black;
+                margin: auto;
                 display: grid;
-                grid-template-columns: repeat(16,${100/16}%);
-                grid-template-rows: repeat(16,${100/16}%);`
+                grid-template-columns: repeat(${n},${100/n}%);
+                grid-template-rows: repeat(${n},${100/n}%);`
 
-            createSquares(16);
+            createSquares(n);
 
             function createSquares(length) {
                 for (i = 0; i < (length**2); i++) {
