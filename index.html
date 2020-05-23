@@ -23,6 +23,10 @@
                 for (i = 0; i < (length**2); i++) {
                     grid.appendChild(document.createElement('div'));
                 }
+                const squares = grid.querySelectorAll('div');
+                squares.forEach((square) => {
+                    square.classList.add('square');
+                });
             }
             
 
