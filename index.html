@@ -10,7 +10,7 @@
         <script>
             const reset = document.querySelector('#reset');
             const grid = document.querySelector('#grid');
-            let n = 32;
+            let n = 16;
 
             reset.style.cssText = `display: block;
                 margin: auto;
@@ -25,10 +25,15 @@
                 grid-template-columns: repeat(${n},${100/n}%);
                 grid-template-rows: repeat(${n},${100/n}%);`
 
+            etch();
             resetGrid();
-            createSquares(n);
 
-            function createSquares(length) {
+            function etch() {
+                createSquares();
+                fillSquares();
+            }
+
+            function createSquares(length = 16) {
                 for (i = 0; i < (length**2); i++) {
                     grid.appendChild(document.createElement('div'));
                 }
@@ -38,17 +43,23 @@
                 });
             }
             
-            const squares = grid.querySelectorAll('.square');
-            squares.forEach((square) => {
-                square.addEventListener('mouseenter', (e) => {
-                    square.style.cssText = "background-color: yellow;";
-                })
-            });
+            function fillSquares() {    
+                const squares = grid.querySelectorAll('.square');
+                squares.forEach((square) => {
+                    square.addEventListener('mouseenter', (e) => {
+                        square.style.cssText = "background-color: yellow;";
+                    })
+                });
+            }
 
             function resetGrid() {
                 reset.addEventListener('click', () => {
+                    const squares = grid.querySelectorAll('.square');
+                    squares.forEach((square) => {
+                        square.style.cssText = "background-color: none;";
+                    })
                     n = prompt("What is your preferred grid size?", "16");
-                    return n;
+                    etch();
                 });
             }
             
