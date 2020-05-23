@@ -8,7 +8,7 @@
         <div id="grid"></div>
         <script>
             const grid = document.querySelector('#grid');
-            const squares = grid.querySelectorAll('div');
+            
 
             grid.style.cssText = `height: 75vh;
                 width: 75vh;
@@ -22,6 +22,7 @@
                 for (i = 0; i < (length**2); i++) {
                     grid.appendChild(document.createElement('div'));
                 }
+                const squares = grid.querySelectorAll('div');
                 squares.forEach((square) => {
                     square.classList.add('square');
                 });
