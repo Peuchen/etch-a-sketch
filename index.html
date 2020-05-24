@@ -11,11 +11,7 @@
         <script>
             const reset = document.querySelector('#reset');
             const grid = document.querySelector('#grid');
-            let n = 16;
-
-            grid.style.cssText = `
-                grid-template-columns: repeat(${n},${100/n}%);
-                grid-template-rows: repeat(${n},${100/n}%);`
+            let n = 16;                
 
             etch();
             resetGrid();
