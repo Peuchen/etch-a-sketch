@@ -3,6 +3,7 @@
     <head>
       <title>Page Title</title>
       <meta charset="UTF-8"/>
+      <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <button id="reset">Reset the grid</button>
@@ -12,16 +13,7 @@
             const grid = document.querySelector('#grid');
             let n = 16;
 
-            reset.style.cssText = `display: block;
-                margin: auto;
-                margin-top: 20px;
-                margin-bottom: 20px;`
-
-            grid.style.cssText = `height: 75vh;
-                width: 75vh;
-                border: 1px solid black;
-                margin: auto;
-                display: grid;
+            grid.style.cssText = `
                 grid-template-columns: repeat(${n},${100/n}%);
                 grid-template-rows: repeat(${n},${100/n}%);`
 
