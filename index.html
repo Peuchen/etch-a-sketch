@@ -29,9 +29,16 @@
                 const squares = grid.querySelectorAll('.square');
                 squares.forEach((square) => {
                     square.addEventListener('mouseenter', (e) => {
-                        square.style.cssText = "background-color: yellow;";
+                        square.style.cssText = `background-color: ${randomColor()};`;
                     })
                 });
+            }
+
+            function randomColor() {
+                const x = Math.floor(Math.random() * 256);
+                const y = Math.floor(Math.random() * 256);
+                const z = Math.floor(Math.random() * 256);
+                return "rgb(" + x + "," + y + "," + z + ")";
             }
 
             function resetGrid() {
