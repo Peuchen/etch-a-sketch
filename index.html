@@ -30,7 +30,7 @@
                 squares.forEach((square) => {
                     square.addEventListener('mouseenter', (e) => {
                         square.style.cssText = `background-color: ${randomColor()};`;
-                    })
+                    }, {once: true});
                 });
             }
 
