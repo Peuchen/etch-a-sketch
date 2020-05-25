@@ -10,16 +10,10 @@
         <div id="grid"></div>
         <script>
             const reset = document.querySelector('#reset');
-            const grid = document.querySelector('#grid');
-            let n = 16;                
-
-            etch();
-            resetGrid();
-
-            function etch() {
-                createSquares();
-                fillSquares();
-            }
+            const grid = document.querySelector('#grid');  
+        
+            createSquares();
+            fillSquares();
 
             function createSquares(length = 16) {
                 for (i = 0; i < (length**2); i++) {
@@ -28,7 +22,7 @@
                 const squares = grid.querySelectorAll('div');
                 squares.forEach((square) => {
                     square.classList.add('square');
-                });
+                });     
             }
             
             function fillSquares() {    
@@ -47,11 +41,14 @@
                         square.style.cssText = "background-color: none;";
                     })
                     n = prompt("What is your preferred grid size?", "16");
-                    etch();
+                    grid.style['grid-template-columns'] = `repeat(${n},1fr)`;
+                    grid.style['grid-template-rows'] = `repeat(${n},1fr)`;
+                    createSquares(n); 
+                    fillSquares();
                 });
             }
-            
-            
+
+            resetGrid();
             
         </script>
     </body>
