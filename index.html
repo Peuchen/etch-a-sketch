@@ -29,8 +29,12 @@
                 const squares = grid.querySelectorAll('.square');
                 squares.forEach((square) => {
                     square.addEventListener('mouseenter', (e) => {
-                        square.style.cssText = `background-color: ${randomColor()};`;
+                        square.style['background-color'] = randomColor();
+                        console.log(square.style['background-color']);
                     }, {once: true});
+                    square.addEventListener('mouseenter', (e) => {
+                        square.style['background-color'] = pSBC(-0.1, square.style['background-color']);
+                    });
                 });
             }
 
@@ -56,7 +60,10 @@
             }
 
             resetGrid();
+
             
         </script>
+            <script type="text/javascript" src="darken-color.js"></script>
+
     </body>
 </html>
